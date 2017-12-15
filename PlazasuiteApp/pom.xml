@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.plazasuite</groupId>
+    <artifactId>PlazasuiteApp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>PlazasuiteApp</name>
+    <description>JavaFX application to manage Plazasuite Business</description>
+    <url>http://plazasuites.in/</url>
+    <organization>
+        <!-- Used as the 'Vendor' for JNLP generation -->
+        <name>Jerin-Suji-Ganesh</name>
+    </organization>
+<!--<scm>
+    <connection>git@github.com:roskenet/springboot-javafx-support.git</connection>
+    <developerConnection>git@github.com:roskenet/springboot-javafx-support.git</developerConnection>
+    <url>https://github.com/roskenet/springboot-javafx-support</url>
+    </scm>-->
+    <developers>
+    <developer>
+      <name>Sujikumar</name>
+      <email>sujits82228@gmail.com</email>
+      <url>http://sujikumar.com</url>
+      <organization>Devloper</organization>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>MIT</name>
+    </license>
+  </licenses>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mainClass>com.plazasuite.plazasuiteapp.PlazaSuiteFxMain</mainClass>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-boot.version>1.5.8.RELEASE</spring-boot.version>
+        <mysql-connector.version>6.0.6</mysql-connector.version>
+        <commons-dbcp2-connection-pool.version>2.1.1</commons-dbcp2-connection-pool.version>
+        <jfx-thirdparty-jfoenix.version>1.8.0</jfx-thirdparty-jfoenix.version>
+        <jfx-thirdparty-controlsfx.version>8.40.14</jfx-thirdparty-controlsfx.version>
+    </properties>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.8.RELEASE</version>
+    </parent>  
+<repositories>
+
+    <repository>
+      <id>Maven Central</id>
+      <url>http://repo.maven.apache.org/maven2/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+<!--    <repository>
+        <id>spring-milestone-repo</id>
+        <url>http://repo.spring.io/milestone/</url>
+    </repository>-->
+    
+</repositories>
+    <build>
+        <plugins>
+           <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <excludeScope>system</excludeScope>
+                            <excludeGroupIds>junit,org.mockito,org.hamcrest</excludeGroupIds>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${java.home}/../bin/javapackager</executable>
+                            <arguments>
+                                <argument>-createjar</argument>
+                                <argument>-nocss2bin</argument>
+                                <argument>-appclass</argument>
+                                <argument>${mainClass}</argument>
+                                <argument>-srcdir</argument>
+                                <argument>${project.build.directory}/classes</argument>
+                                <argument>-outdir</argument>
+                                <argument>${project.build.directory}</argument>
+                                <argument>-outfile</argument>
+                                <argument>${project.build.finalName}.jar</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>exec</goal>                            
+                        </goals>
+                        <configuration>
+                            <executable>${java.home}/bin/java</executable>
+                            <commandlineArgs>${runfx.args}</commandlineArgs>
+                        </configuration>
+                    </execution>
+                </executions>  
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <compilerArguments>
+                        <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+            </plugin> 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+                <configuration>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${java.home}/lib/jfxrt.jar</additionalClasspathElement>
+                    </additionalClasspathElements>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+ <dependencies>
+
+    <!-- Mysql Connector -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <!--<version>${mysql-connector.version}</version>-->
+    </dependency>
+        <!-- Apache Commons DBCP -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-dbcp2</artifactId>
+      <!--<version>${commons-dbcp2-connection-pool.version}</version>-->
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/com.jfoenix/jfoenix -->
+<dependency>
+    <groupId>com.jfoenix</groupId>
+    <artifactId>jfoenix</artifactId>
+    <version>${jfx-thirdparty-jfoenix.version}</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
+<dependency>
+    <groupId>org.controlsfx</groupId>
+    <artifactId>controlsfx</artifactId>
+    <version>${jfx-thirdparty-controlsfx.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+</dependency>
+        <!-- Spring data JPA, default tomcat pool, exclude it -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+    <exclusions>
+        <exclusion>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+
+  </dependencies>
+</project>

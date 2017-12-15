@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="413.0" prefWidth="1057.0" styleClass="card-unpadded" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.plazasuite.plazasuiteapp.controller.NewBookingController">
+   <children>
+      <VBox layoutX="193.0" layoutY="11.0" prefHeight="687.0" prefWidth="505.0" spacing="10.0">
+         <children>
+            <JFXTextField focusColor="#00add8" labelFloat="true" maxWidth="485.0" minWidth="485.0" prefHeight="31.0" prefWidth="485.0" promptText="First Name" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" layoutX="10.0" layoutY="10.0" maxWidth="483.0" minWidth="483.0" prefHeight="31.0" prefWidth="483.0" promptText="MIddle Name" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" layoutX="10.0" layoutY="46.0" maxWidth="480.0" minWidth="480.0" prefHeight="31.0" prefWidth="480.0" promptText="Last Name" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" layoutX="10.0" layoutY="82.0" maxWidth="477.0" minWidth="477.0" prefHeight="31.0" prefWidth="477.0" promptText="Address" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" layoutX="10.0" layoutY="118.0" maxWidth="476.0" minWidth="476.0" prefHeight="31.0" prefWidth="476.0" promptText="District" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" maxWidth="472.0" minWidth="472.0" prefHeight="31.0" prefWidth="472.0" promptText="State" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" maxWidth="476.0" minWidth="476.0" prefHeight="31.0" prefWidth="476.0" promptText="Pincode/Zipcode" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" maxWidth="469.0" minWidth="469.0" prefHeight="31.0" prefWidth="469.0" promptText="Country" unFocusColor="#868282" />
+            <JFXTextField focusColor="#00add8" labelFloat="true" maxWidth="469.0" minWidth="469.0" prefHeight="31.0" prefWidth="469.0" promptText="Nationality" unFocusColor="#868282" />
+            <HBox prefHeight="36.0" prefWidth="485.0">
+               <children>
+                  <HBox prefHeight="29.0" prefWidth="462.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="47.0" text="Gender" />
+                        <JFXRadioButton text="Male" />
+                        <JFXRadioButton text="Female" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="346.0">
+               <children>
+                  <JFXDatePicker prefHeight="31.0" prefWidth="224.0" promptText="DOB" />
+                  <JFXTextField maxWidth="248.0" minWidth="248.0" prefHeight="31.0" prefWidth="248.0" promptText="Age" />
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="485.0">
+               <children>
+                  <JFXDatePicker prefHeight="31.0" prefWidth="224.0" promptText="Check-in Date" />
+                  <JFXTimePicker prefHeight="31.0" prefWidth="224.0" promptText="Check-in TIme" />
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="485.0">
+               <children>
+                  <JFXDatePicker prefHeight="31.0" prefWidth="224.0" promptText="Check-out Date" />
+                  <JFXTimePicker prefHeight="31.0" prefWidth="224.0" promptText="Check-out Time" />
+               </children>
+            </HBox>
+            <HBox prefHeight="48.0" prefWidth="485.0">
+               <children>
+                  <JFXTextField maxWidth="469.0" minWidth="469.0" prefHeight="31.0" prefWidth="469.0" promptText="Address Proof" />
+               </children>
+            </HBox>
+            <JFXTextField maxWidth="469.0" minWidth="469.0" prefHeight="31.0" prefWidth="469.0" promptText="Address Id" />
+         </children>
+         <padding>
+            <Insets left="20.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="sideMenu"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="149.0" styleClass="card-unpadded" stylesheets="@../styles/Styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0" fx:controller="com.plazasuite.plazasuiteapp.controller.SideMenuController">
+   <children>
+         <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imgs/cover.jpg" />
+         </image></ImageView>
+         <JFXButton fx:id="homeBtn" accessibleText="homeMenu" prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="Home" />
+      <JFXButton fx:id="availableRoomBtn" accessibleText="availableRoomsMenu" layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="Available Rooms" />
+      <JFXButton fx:id="newBookingBtn" accessibleText="newBookingMenu" layoutX="10.0" layoutY="53.0" prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="New Booking" />
+      <JFXButton fx:id="currentBookingBtn" accessibleText="currentBookingMenu" layoutX="10.0" layoutY="96.0" prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="Current Booking" />
+      <JFXButton fx:id="reportBtn" accessibleText="reportMenu" layoutX="10.0" layoutY="182.0"  prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="Reports" />
+      <JFXButton fx:id="addRoomBtn" accessibleText="addRoomMenu" layoutX="10.0" layoutY="182.0"  prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="Add Room" />
+      <JFXButton fx:id="addServicesBtn" accessibleText="addServicesMenu" layoutX="10.0" layoutY="182.0"  prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="Add Services" />
+       <JFXButton fx:id="logoutBtn" accessibleText="logoutMenu" layoutX="10.0" layoutY="182.0"  prefHeight="43.0" prefWidth="200.0" styleClass="drawer-buttons" text="Logout" />     
+      <JFXButton prefHeight="227.0" prefWidth="152.0" styleClass="drawer-buttons" text="  " />
+   </children>
+</VBox>
