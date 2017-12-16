@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.restfulservice</groupId>
+  <artifactId>springbootapp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>springbootapp</name>
+  <description>Springboot-Jersey-JWT-Spring JPA Integration</description>
+  <url>http://maven.apache.org</url>
+  <organization>
+      <!-- Used as the 'Vendor' for JNLP generation -->
+      <name>UST Global</name>
+  </organization>
+  <!--<scm>
+    <connection>git@github.com:roskenet/springboot-javafx-support.git</connection>
+    <developerConnection>git@github.com:roskenet/springboot-javafx-support.git</developerConnection>
+    <url>https://github.com/roskenet/springboot-javafx-support</url>
+    </scm>-->
+<developers>
+    <developer>
+      <name>Sujikumar</name>
+      <email>sujits82228@gmail.com</email>
+      <url>http://sujikumar.com</url>
+      <organization>Devloper</organization>
+    </developer>
+</developers>
+<licenses>
+    <license>
+      <name>MIT</name>
+    </license>
+</licenses>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <mainClass>com.restfulservice.springbootapp.Application</mainClass>
+  </properties>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+    </parent>
+  <dependencies>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jersey</artifactId>
+        </dependency>
+        
+                <!-- Spring data JPA, default tomcat pool, exclude it -->
+<!-- <dependency> -->
+<!--     <groupId>org.springframework.boot</groupId> -->
+<!--     <artifactId>spring-boot-starter-data-jpa</artifactId> -->
+<!--     <exclusions> -->
+<!--         <exclusion> -->
+<!--             <groupId>org.apache.tomcat</groupId> -->
+<!--             <artifactId>tomcat-jdbc</artifactId> -->
+<!--         </exclusion> -->
+<!--     </exclusions> -->
+<!-- </dependency> -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+  </dependencies>
+   <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>  
+</project>
