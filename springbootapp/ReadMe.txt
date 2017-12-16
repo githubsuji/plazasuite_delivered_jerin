@@ -22,11 +22,12 @@ https://jersey.github.io/documentation/latest/spring.html
 https://jersey.github.io/documentation/latest/index.html 
 https://repo1.maven.org/maven2/org/glassfish/jersey/jersey-documentation/2.5.1/jersey-documentation-2.5.1-user-guide.pdf 
 
+https://github.com/Codingpedia/demo-rest-jersey-spring/blob/master/src/main/java/org/codingpedia/demo/rest/RestDemoJaxRsApplication.java
+https://www.concretepage.com/spring-boot/spring-boot-jersey-rest-jpa-hibernate-crud-example
 
 
 
-
-
+https://github.com/belano/spring-boot-jersey-jwt-auth
 
 
 https://ponyfoo.com/articles/json-web-tokens-vs-session-cookies 
@@ -36,6 +37,14 @@ https://auth0.com/blog/refresh-tokens-what-are-they-and-when-to-use-them/
 https://auth0.com/blog/blacklist-json-web-token-api-keys/ 
 
 https://jwt.io/introduction/ 
+
+
+https://github.com/bfwg/springboot-jwt-starter
+https://github.com/cassiomolin/jersey-jwt-springsecurity
+
+
+
+https://bytefish.de/blog/cors_with_jersey/
 
 
 
