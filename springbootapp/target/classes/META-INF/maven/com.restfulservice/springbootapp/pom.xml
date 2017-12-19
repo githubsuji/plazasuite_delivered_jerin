@@ -33,9 +33,13 @@
 </licenses>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- util -->
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<commons-io.version>2.4</commons-io.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <mainClass>com.restfulservice.springbootapp.Application</mainClass>
+    
   </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,7 +55,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jersey</artifactId>
         </dependency>
-        
+ 
                 <!-- Spring data JPA, default tomcat pool, exclude it -->
 <!-- <dependency> -->
 <!--     <groupId>org.springframework.boot</groupId> -->
